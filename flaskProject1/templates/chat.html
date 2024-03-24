@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Documents</title>
+    <style>
+        #chat-history {
+            border: 1px solid #ddd;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user {
+            color: blue;
+        }
+        .bot {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat about Your Documents</h1>
+    <form action="" method="post">
+        <label for="question">Ask a question:</label>
+        <input type="text" id="question" name="question" required>
+        <button type="submit">Ask</button>
+    </form>
+    <div id="chat-history">
+        <h2>Conversation History</h2>
+        {% if chat_history %}
+            {% for message in chat_history %}
+                <div class="message {{ message.type }}">
+                    {{ message.content }}
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No conversation history.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

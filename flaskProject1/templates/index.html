@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Query Application</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+<div class="card">
+    <h1>Upload Document</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="document">
+        <input type="submit" value="Upload">
+    </form>
+
+    <h1>Ask a Question</h1>
+    <form action="/ask" method="post">
+        <input type="text" name="question">
+        <input type="submit" value="Ask">
+    </form>
+</div>
+</body>
+</html>
