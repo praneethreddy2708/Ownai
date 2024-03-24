@@ -12,7 +12,7 @@ from langchain.chains import ConversationalRetrievalChain
 import os
 
 app = Flask(__name__)
-app.secret_key = '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'  # Replace 'your_secret_key' with a real secret key
+app.secret_key = ''  # Replace 'your_secret_key' with a real secret key
 
 load_dotenv()
 
@@ -38,7 +38,7 @@ def get_text_chunks(text):
 
 
 def get_vectorstore(chunks):
-    embeddings = OpenAIEmbeddings(openai_api_key='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')
+    embeddings = OpenAIEmbeddings(openai_api_key='')
     client = Chroma()
     vectorstore = client.create_vectorstore("embeddings")
     vectorstore.insert(embeddings.encode(chunks))
